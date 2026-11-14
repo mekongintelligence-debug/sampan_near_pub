@@ -62,4 +62,26 @@ describe("A3-01: default RPC and progress", () => {
     expect(await page.isDisabled("#check")).toBe(false);
     await page.close();
   }, 40_000);
+
+  it("A3-02: survives two dropped calls at the start (the page retries, same host) and still shows a full result", async () => {
+    const page = await browser.newPage();
+    const recs = release.recorded;
+    let dropped = 0;
+    await page.route("**/*", async (route: any) => {
+      const url = new URL(route.request().url());
+      if (url.protocol === "file:") return route.continue();
+      if (dropped < 2) { dropped++; return route.abort(); } // a dropped or throttled call: the browser reports a failed request
+      const req = JSON.parse(route.request().postData() ?? "{}");
+      const rec = recs.find((r: any) => r.method === req.method && JSON.stringify(r.params) === JSON.stringify(req.params));
+      const body = rec ? rec.response : { jsonrpc: "2.0", id: "x", error: { name: "HANDLER_ERROR", cause: { name: "UNKNOWN_TRANSACTION" } } };
+      return route.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": "*" }, body: JSON.stringify(body) });
+    });
+    await page.goto(fileUrl);
+    await page.fill("textarea", JSON.stringify(release.envelope));
+    await page.click("#check");
+    await page.waitForFunction(() => (document.getElementById("verdict") as HTMLElement).innerText.length > 0, undefined, { timeout: 20_000 });
+    expect(dropped).toBe(2);
+    expect(await page.textContent("#result")).not.toMatch(/could not be reached/);
+    await page.close();
+  }, 40_000);
 });

@@ -1,6 +1,6 @@
 // Minimal NEAR JSON-RPC client for the checker. Every request goes to the configured RPC
 // URL only (the page's CSP enforces the same). All reads use `final` finality.
-export type FetchResponse = { ok: boolean; json(): Promise<unknown>; body?: ReadableStream<Uint8Array> | null };
+export type FetchResponse = { ok: boolean; status?: number; json(): Promise<unknown>; body?: ReadableStream<Uint8Array> | null };
 export type Fetch = (url: string, init: { method: string; headers: Record<string, string>; body: string }) => Promise<FetchResponse>;
 
 export class RpcError extends Error {}
@@ -25,6 +25,9 @@ export function checkRpcUrl(url: string): string {
 }
 
 const MAX_RESPONSE = 4_000_000;
+/** Pauses before each retry of a failed or throttled call; at most two retries, about 2.4 seconds in all. */
+export const RPC_RETRY: { delaysMs: number[] } = { delaysMs: [600, 1800] };
+const RETRY_STATUS = [429, 502, 503, 504];
 
 /** Read a JSON body, stopping as soon as it exceeds MAX_RESPONSE bytes (M6-CR7). */
 async function readCapped(res: FetchResponse): Promise<unknown> {
@@ -53,11 +56,19 @@ export class Rpc {
     this.fetchFn = fetchFn;
   }
   async call(method: string, params: unknown): Promise<any> {
-    let res;
-    try {
-      res = await this.fetchFn(this.url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ jsonrpc: "2.0", id: "checker", method, params }) });
-    } catch {
-      throw new RpcError("the RPC could not be reached");
+    // A public RPC sometimes drops or throttles a single call (A3-02); a throttled answer carries no CORS
+    // header, so the browser reports it as a failed request. Retry only that, a bounded number of times,
+    // against the same host. A real RPC answer (including an error answer) is never retried.
+    let res: FetchResponse | undefined;
+    for (let attempt = 0; ; attempt++) {
+      res = undefined;
+      try {
+        res = await this.fetchFn(this.url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ jsonrpc: "2.0", id: "checker", method, params }) });
+      } catch { /* network failure: treated like a busy answer below */ }
+      if (res !== undefined && !(res.status !== undefined && RETRY_STATUS.includes(res.status))) break;
+      const wait = RPC_RETRY.delaysMs[attempt];
+      if (wait === undefined) throw new RpcError("the RPC could not be reached");
+      await new Promise((resolve) => setTimeout(resolve, wait));
     }
     let body: any;
     try { body = await readCapped(res); } catch (e) { throw e instanceof RpcError ? e : new RpcError("the RPC answered with something that is not JSON"); }
