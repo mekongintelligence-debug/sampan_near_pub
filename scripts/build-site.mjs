@@ -15,6 +15,7 @@ import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { buildChecker } from "../apps/checker/build.mjs";
 import { buildShop } from "../apps/test-shop/build.mjs";
+import { buildExplainer } from "../apps/explainer/build.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const out = resolve(process.argv[2] ?? resolve(ROOT, "site"));
@@ -29,6 +30,7 @@ mkdirSync(out, { recursive: true });
 writeFileSync(resolve(out, MARK), "built by scripts/build-site.mjs\n");
 
 await buildChecker(resolve(out, "checker/index.html"));
+buildExplainer(resolve(out, "explainer/index.html"));
 // The public shop is a DRY preview against mainnet USDC: 1Click quotes only real assets (it
 // refuses the testnet mock token), and a dry quote never creates a deposit address. Recipient:
 // the deployed mainnet gate once recorded, else the existing `near` account (as in the dry run).
@@ -63,7 +65,7 @@ writeFileSync(resolve(out, "index.html"), `<!doctype html>
 <p class="lede">A checkout that can prove every payment was what the buyer authorised. A person or an AI agent pays from another chain through NEAR Intents, and anyone can check the receipt in the browser, with no wallet and no server of ours.</p>
 </div></header>
 <main>
-<p><a class="cta" href="checker/">Open the receipt checker</a><a class="cta alt" href="shop/">Open the test shop</a></p>
+<p><a class="cta" href="explainer/">Take the 1-minute tour</a><a class="cta alt" href="checker/">Open the receipt checker</a><a class="cta alt" href="shop/">Open the test shop</a></p>
 <p>A NEAR contract pays the shop only for an order inside the buyer's signed mandate, and refuses the rest. The test shop is a dry checkout preview and never pays. Load one of the receipts below in the checker.</p>
 <h2>Receipts</h2>
 <ul>
@@ -86,4 +88,4 @@ writeFileSync(
   resolve(out, "vercel.json"),
   JSON.stringify({ headers: [{ source: "/(.*)", headers: Object.entries(SECURITY_HEADERS).map(([key, value]) => ({ key, value })) }] }, null, 2) + "\n",
 );
-console.log(`built ${out}: index.html, checker/, shop/ (dry), ${receipts.length} receipts, _headers, vercel.json`);
+console.log(`built ${out}: index.html, explainer/, checker/, shop/ (dry), ${receipts.length} receipts, _headers, vercel.json`);
