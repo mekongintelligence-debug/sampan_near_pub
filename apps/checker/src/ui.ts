@@ -100,6 +100,7 @@ async function run(): Promise<void> {
   }
   const hosts = [rpc.value, rpc2.value].map((u) => { try { return new URL(u.trim()).hostname; } catch { return ""; } }).filter(Boolean);
   $<HTMLButtonElement>("check").disabled = true;
+  $("progress").hidden = false; // the check can take a while; never look idle
   let r: Result;
   try {
     r = await verifyReceipt(bytes, {
@@ -110,7 +111,7 @@ async function run(): Promise<void> {
     // Never leave the viewer without a verdict (M6-CR4).
     r = { overall: "unverifiable", facts: null, checks: [{ id: "error", title: "The check could not be completed", status: "unknown", detail: "Something unexpected went wrong. This is not a confirmation; try again or use another RPC." }] };
   } finally {
-    if (id === runId) $<HTMLButtonElement>("check").disabled = false;
+    if (id === runId) { $<HTMLButtonElement>("check").disabled = false; $("progress").hidden = true; }
   }
   if (id === runId) render(r, hosts); // a newer check or an edit has replaced this one
 }

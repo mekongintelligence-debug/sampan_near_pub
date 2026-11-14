@@ -20,7 +20,7 @@ const FIX = resolve(import.meta.dirname, "../test/fixtures");
 const release = JSON.parse(readFileSync(resolve(FIX, "release.json"), "utf8"));
 const refuse = JSON.parse(readFileSync(resolve(FIX, "refuse.json"), "utf8"));
 const recs = [...release.recorded, ...refuse.recorded];
-const ALLOWED = new Set(["rpc.testnet.near.org", "rpc.mainnet.near.org", "test.rpc.fastnear.com", "rpc.fastnear.com"]);
+const ALLOWED = new Set(["rpc.testnet.near.org", "rpc.mainnet.near.org", "test.rpc.fastnear.com", "rpc.fastnear.com", "archival-rpc.testnet.near.org", "archival-rpc.mainnet.near.org"]); // = ALLOWED_RPC_HOSTS (the page CSP)
 const clone = <T>(x: T): T => JSON.parse(JSON.stringify(x));
 const b64url = (s: string) => Buffer.from(s).toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 /** A forger who recomputes every hash so the file stays internally consistent. */

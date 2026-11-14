@@ -5,9 +5,11 @@ export type Fetch = (url: string, init: { method: string; headers: Record<string
 
 export class RpcError extends Error {}
 
+// Archival hosts by default: a regular RPC forgets transactions after about a day (audit M8-01), so
+// the transaction checks of any older receipt would time out there. Both hosts are in the page's CSP.
 export const DEFAULT_RPC: Record<"testnet" | "mainnet", string> = {
-  testnet: "https://rpc.testnet.near.org",
-  mainnet: "https://rpc.mainnet.near.org",
+  testnet: "https://archival-rpc.testnet.near.org",
+  mainnet: "https://archival-rpc.mainnet.near.org",
 };
 /** Hosts the page may contact (mirrored in the CSP of index.html by the build). */
 export const ALLOWED_RPC_HOSTS = ["rpc.testnet.near.org", "rpc.mainnet.near.org", "test.rpc.fastnear.com", "rpc.fastnear.com", "archival-rpc.testnet.near.org", "archival-rpc.mainnet.near.org"];

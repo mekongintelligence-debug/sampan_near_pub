@@ -19,7 +19,7 @@ const FIX = resolve(import.meta.dirname, "../test/fixtures");
 const release = JSON.parse(readFileSync(resolve(FIX, "release.json"), "utf8"));
 const refuse = JSON.parse(readFileSync(resolve(FIX, "refuse.json"), "utf8"));
 const recs = [...release.recorded, ...refuse.recorded];
-const ALLOWED = new Set(["rpc.testnet.near.org", "rpc.mainnet.near.org", "test.rpc.fastnear.com", "rpc.fastnear.com"]);
+const ALLOWED = new Set(["rpc.testnet.near.org", "rpc.mainnet.near.org", "test.rpc.fastnear.com", "rpc.fastnear.com", "archival-rpc.testnet.near.org", "archival-rpc.mainnet.near.org"]); // = ALLOWED_RPC_HOSTS (the page CSP)
 
 let browser: any, fileUrl = "";
 beforeAll(async () => {
@@ -99,7 +99,8 @@ describe("checker page (built, opened as a local file)", () => {
     const { page, requests, blocked } = await open();
     await checkText(page, JSON.stringify(release.envelope));
     expect(blocked).toEqual([]);
-    expect(new Set(requests.filter((h) => h !== "file"))).toEqual(new Set(["rpc.testnet.near.org"]));
+    // The default is the archival host (audit M8-01 / A3-01): a regular RPC forgets older transactions.
+    expect(new Set(requests.filter((h) => h !== "file"))).toEqual(new Set(["archival-rpc.testnet.near.org"]));
     await page.close();
   }, 30_000);
 
@@ -141,7 +142,7 @@ describe("checker page (built, opened as a local file)", () => {
     await page.fill("#receipt", JSON.stringify(e));
     await page.click("#check");
     await page.waitForSelector("#result:not([hidden])");
-    expect(await page.inputValue("#rpc")).toBe("https://rpc.mainnet.near.org");
+    expect(await page.inputValue("#rpc")).toBe("https://archival-rpc.mainnet.near.org");
     await page.close();
   }, 30_000);
 
