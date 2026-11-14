@@ -1,0 +1,12 @@
+# Throwaway spike for Gate 2 (M1). Not part of the main workspace; never deployed to mainnet.
+[workspace]
+resolver = "2"
+members = ["gate", "token", "cleaner"]
+
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true

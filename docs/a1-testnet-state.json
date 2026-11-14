@@ -1,0 +1,15 @@
+{
+  "note": "Mandates left open by scripts/a1/testnet-run.mjs; close with --close after expiry.",
+  "open": [
+    [
+      "A",
+      "60af00463455753d58b3f858e099748ff0b831877635799b3d87bd3acef6a602",
+      "merchant.sampan-trust-01.testnet"
+    ],
+    [
+      "C",
+      "e30b6bc14fd70cc8e81c4b04dd8df9708c894f903daf1e1aa16408479fabbcba",
+      "merchant.sampan-trust-01.testnet"
+    ]
+  ]
+}

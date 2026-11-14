@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-06T05:51:55.347Z",
+  "gate": "gate-m3.sampan-trust-01.testnet",
+  "results": [
+    {
+      "name": "create payee2-m3.sampan-trust-01.testnet",
+      "ok": true,
+      "detail": "null",
+      "tx": "https://testnet.nearblocks.io/txns/EWwd4sABJEnA34VZNSPyujq8PBqiH6xHxsYm7HtwnXwv"
+    },
+    {
+      "name": "deploy gate (M3 contract)",
+      "ok": true,
+      "detail": "null",
+      "tx": "https://testnet.nearblocks.io/txns/9oqip1W3WuzUbLz5pbxCsp6hjQMpMx9ctYARAi7aShhp"
+    },
+    {
+      "name": "init gate (only the gate account may, audit M3-04)",
+      "ok": true,
+      "detail": "null",
+      "tx": "https://testnet.nearblocks.io/txns/Hai8pSkoNFHNWbyRCx4D4q9FBdqfTvXPEDXcoUpDH3BU"
+    },
+    {
+      "name": "add agent function-call key (gate-m3.purchase only)",
+      "ok": true,
+      "detail": "null",
+      "tx": "https://testnet.nearblocks.io/txns/8PyeyMf3U8jSwL5F9M3GDffoLUgiEfhrSmpgbZTYUHgn"
+    },
+    {
+      "name": "A1. buyer funds mandate A with 5 tokens (ft_transfer_call)",
+      "ok": true,
+      "detail": "\"5000000\"",
+      "tx": "https://testnet.nearblocks.io/txns/8Q2JVkV5HrZ4q5wjFPfLfCigZaLUw5LbQe1kxNYwsHuA"
+    },
+    {
+      "name": "A2. fake token: buyer calls ft_on_transfer directly (full amount handed back, nothing stored)",
+      "ok": true,
+      "detail": "\"5000000\"",
+      "tx": "https://testnet.nearblocks.io/txns/3abzwEHwj2emGHEtC959vXVxmk7hM3L5GkpELGDTzoWi"
+    },
+    {
+      "name": "A3. agent key: purchase 2 tokens for report-001 (release)",
+      "ok": true,
+      "detail": "{\"decision\":\"release\",\"anchored\":true,\"order_id\":\"f678b887f8576af78941a655d6a96ca392c31d9b72cb1675838c347ae6235ec9\",\"core_hash\":\"6cf9e884c16656bab732fe68b76eefb92dc8d9fad977b48fa674f47331d201f1\"}",
+      "tx": "https://testnet.nearblocks.io/txns/9Vrpx1yrLNcXKcKZjtubxHj9pffYSUSH1rVNtp2Bc2QY"
+    },
+    {
+      "name": "A4. shop received exactly 2 tokens (gate paid its token registration, Q17)",
+      "ok": true,
+      "detail": "0 -> 2000000",
+      "tx": ""
+    },
+    {
+      "name": "A5. receipt payout status is done",
+      "ok": true,
+      "detail": "{\"mandate_hash\":\"cc97ea49a35cb9c5bf751687d9870f81c0f0352653732545fae2e6142aad42eb\",\"core_hash\":\"6cf9e884c16656bab732fe68b76eefb92dc8d9fad977b48fa674f47331d201f1\",\"decision\":\"release\",\"amount\":\"2000000\",\"payout\":\"Done\",\"block_height\":\"276447562\"}",
+      "tx": ""
+    },
+    {
+      "name": "A6. receipt event passes the TS checker (core and full envelope) and equals the stored anchor",
+      "ok": true,
+      "detail": "f678b887f8576af78941a655d6a96ca392c31d9b72cb1675838c347ae6235ec9",
+      "tx": ""
+    },
+    {
+      "name": "A7. agent: order paying a swapped payee (R8) is refused, anchored, no transfer",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":true,\"order_id\":\"256d797a68044318dea8fc3365ff5c01d8d285638b66f107b1653ba01926d5c4\",\"core_hash\":\"8c0ee813d37f0124e0beb7f179ac0a8a02e5981c4b98aba10773feb59a895aec\"}",
+      "tx": "https://testnet.nearblocks.io/txns/63cvtNUF2RasgvqgrfaBJcymEqUxsVjnp6SDSdwKc1wq"
+    },
+    {
+      "name": "A8. refusal receipt anchored and parses",
+      "ok": true,
+      "detail": "256d797a68044318dea8fc3365ff5c01d8d285638b66f107b1653ba01926d5c4",
+      "tx": ""
+    },
+    {
+      "name": "A9. agent: 4 tokens with 3 left (R7) is refused",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":true,\"order_id\":\"b092455e408d334c7578ff555a018c5ca37b63d823515ca0f687e2f17f816e3f\",\"core_hash\":\"824c08f32805827f25d5af5a6a7b0db027a1282987fb69b733958f56fc65bf5c\"}",
+      "tx": "https://testnet.nearblocks.io/txns/7PNNfmhrwMMUUcT1d8jMJjqByp4Pq7atvbPQ3bw84ojX"
+    },
+    {
+      "name": "A9b. R7 refusal observes the 3 tokens held and passes the TS envelope check (M3-X1)",
+      "ok": true,
+      "detail": "b092455e408d334c7578ff555a018c5ca37b63d823515ca0f687e2f17f816e3f",
+      "tx": ""
+    },
+    {
+      "name": "A10. agent: item outside the mandate (R9) is refused",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":true,\"order_id\":\"d08f30157b5dd068f4c1b525c418dcc3ace3868fe7404c2bae5cb6c4c21796b6\",\"core_hash\":\"fbfda8e0a9c3e75cce17b8e3ec8ccb71fcf54c14077a269703bba82e9ef3c65e\"}",
+      "tx": "https://testnet.nearblocks.io/txns/rYEzroFXqWUk6XgRsVQmRGhWp5fw4r4HadYD5W5SuB2"
+    },
+    {
+      "name": "A10b. agent: order in another asset (R6) is refused",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":true,\"order_id\":\"b32f65a852e86eb1bec0f89cd5624fefab7ca48d7b16699e15d038801e5daf06\",\"core_hash\":\"50c16f554eaeb3c7845b74ad56c60442dd0969d7adf074c5c6bc67e3a32aaf85\"}",
+      "tx": "https://testnet.nearblocks.io/txns/2AqFpPgdBqappNc8NvTmaoYid6oZUMdFvz1sm1meMdnp"
+    },
+    {
+      "name": "A11. agent: replay of order 1 is refused without state (R4)",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":false,\"reason\":\"order_used\",\"mandate_hash\":\"cc97ea49a35cb9c5bf751687d9870f81c0f0352653732545fae2e6142aad42eb\",\"order_id\":\"f678b887f8576af78941a655d6a96ca392c31d9b72cb1675838c347ae6235ec9\"}",
+      "tx": "https://testnet.nearblocks.io/txns/9F9Rzs8oXtJJoWSzzXRexF7gqFXBLxuBEySpdUVucfzW"
+    },
+    {
+      "name": "A12. buyer (not the agent) calls purchase: refused without state (R5)",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":false,\"reason\":\"not_authorised\"}",
+      "tx": "https://testnet.nearblocks.io/txns/AJaE8PPcr6gAexmCfg4fFWiJqHbm2XQVPTmxeHdFL251"
+    },
+    {
+      "name": "A13. mandate A: spent 2, escrow 3",
+      "ok": true,
+      "detail": "{\"agent\":\"agent.sampan-trust-01.testnet\",\"payee\":\"payee2-m3.sampan-trust-01.testnet\",\"refund_to\":\"buyer.sampan-trust-01.testnet\",\"max_amount\":\"5000000\",\"expiry_ns\":\"1793947571729000000\",\"funded\":\"5000000\",\"spent\":\"2000000\",\"escrow\":\"3000000\",\"refunded\":\"0\",\"orders\":5}",
+      "tx": ""
+    },
+    {
+      "name": "F1. tampered mandate (R1): token returns everything (used 0)",
+      "ok": true,
+      "detail": "\"0\"",
+      "tx": "https://testnet.nearblocks.io/txns/C4mARGUTgPCmENWgAAqYhtYMenUUCyTDNJksjrAM9NRt"
+    },
+    {
+      "name": "F2. mandate for mainnet (R2): returned in full",
+      "ok": true,
+      "detail": "\"0\"",
+      "tx": "https://testnet.nearblocks.io/txns/8QMEvufsjpGysa4RyokEAezkxaJP6qvfmb6zDtGsX748"
+    },
+    {
+      "name": "F3. mandate for another gate (R2): returned in full",
+      "ok": true,
+      "detail": "\"0\"",
+      "tx": "https://testnet.nearblocks.io/txns/524GJmURA4HKXCpXjYAgyx44VtLwo7xgjwxjGcmLCRd4"
+    },
+    {
+      "name": "C1. direct checkout: payment carries the order; gate decides and pays in the same transaction",
+      "ok": true,
+      "detail": "\"1000000\"",
+      "tx": "https://testnet.nearblocks.io/txns/EGrWM5xRFH31rh9nUzSX7vBotFTr63sh3TC6rnx92LHr"
+    },
+    {
+      "name": "C2. shop received 1 token",
+      "ok": true,
+      "detail": "ok",
+      "tx": ""
+    },
+    {
+      "name": "D1. fund mandate D (expires in 75 s) with 0.5 tokens",
+      "ok": true,
+      "detail": "\"500000\"",
+      "tx": "https://testnet.nearblocks.io/txns/2R1qBj6XF3giNzubtBk5j4Hkgntj3REcBxHEMwdocwux"
+    },
+    {
+      "name": "D2. refund before expiry is refused",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":false,\"reason\":\"not_expired\"}",
+      "tx": "https://testnet.nearblocks.io/txns/GQKP9nY8eyETze5DhkoLrXf5Ehcipu3bv1ADkmVs9WHh"
+    },
+    {
+      "name": "D2b. agent purchase after expiry (R3) is refused and anchored",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":true,\"order_id\":\"5ea7704e387702f836f9b535a6b24104075ff457d271709f90564a250c522bbd\",\"core_hash\":\"8fd2182c146017fe60cca75796c90f9fb2b0362f82010cf88bcfb766e769f342\"}",
+      "tx": "https://testnet.nearblocks.io/txns/8Z82WXxnvkStQtS5pKEXPd4W5mxLWEDHRuzMpyoNrEVg"
+    },
+    {
+      "name": "D2c. R3 refusal receipt parses and equals the anchor",
+      "ok": true,
+      "detail": "5ea7704e387702f836f9b535a6b24104075ff457d271709f90564a250c522bbd",
+      "tx": ""
+    },
+    {
+      "name": "D3. after expiry a stranger (merchant) triggers the refund",
+      "ok": true,
+      "detail": "{\"refund\":\"pending\",\"amount\":\"500000\"}",
+      "tx": "https://testnet.nearblocks.io/txns/6ZhMZk66DDMaNpFi2GMEBbho5Te5Zv17KwLQBUumpSJY"
+    },
+    {
+      "name": "D4. buyer (refund_to) got 0.5 tokens back",
+      "ok": true,
+      "detail": "",
+      "tx": ""
+    },
+    {
+      "name": "D5. after the refund settled the mandate is closed; a second refund finds nothing",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":false,\"reason\":\"unknown_mandate\"}",
+      "tx": "https://testnet.nearblocks.io/txns/HADBUnKtkYMsq6zSjF7M3Kac84q4MeVWKcuDN8wGt3vz"
+    },
+    {
+      "name": "D6. purchase on the closed mandate: refused without state",
+      "ok": true,
+      "detail": "{\"decision\":\"refuse\",\"anchored\":false,\"reason\":\"unknown_mandate\"}",
+      "tx": "https://testnet.nearblocks.io/txns/D9UR22zCF4tjJW67m223ziFv5NX3d5N898TFVrEHwNG4"
+    },
+    {
+      "name": "Z. gate totals",
+      "ok": true,
+      "detail": "{\"total_escrow\":\"3000000\",\"mandates\":2,\"registrations\":2}",
+      "tx": ""
+    },
+    {
+      "name": "delete agent function-call key",
+      "ok": true,
+      "detail": "null",
+      "tx": "https://testnet.nearblocks.io/txns/5Hbqq9vX86QPxSJz5cDF4zPw2RaCviQvsvHGf52ZkYXW"
+    }
+  ]
+}

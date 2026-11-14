@@ -1,0 +1,94 @@
+{
+  "v": "sampan.receipt-envelope.v1",
+  "core": {
+    "block_height": "276661889",
+    "decision": "release",
+    "gate": "gate-m3.sampan-trust-01.testnet",
+    "mandate_hash": "924e40ddbe1d78a9f1ebb9a08b3eab0777f73620f7914e977df63b816a66f91b",
+    "network": "testnet",
+    "observed": {
+      "amount": "1000000",
+      "asset": "token.sampan-trust-01.testnet"
+    },
+    "order_hash": "a41f84a30465720ee916865b11e865910182fb56e35c5fee763a0df4561c0ecc",
+    "rules": [
+      {
+        "id": "R1",
+        "pass": true
+      },
+      {
+        "id": "R2",
+        "pass": true
+      },
+      {
+        "id": "R3",
+        "pass": true
+      },
+      {
+        "id": "R4",
+        "pass": true
+      },
+      {
+        "id": "R5",
+        "pass": true
+      },
+      {
+        "id": "R6",
+        "pass": true
+      },
+      {
+        "id": "R7",
+        "pass": true
+      },
+      {
+        "id": "R8",
+        "pass": true
+      },
+      {
+        "id": "R9",
+        "pass": true
+      }
+    ],
+    "v": "sampan.receipt.v1"
+  },
+  "core_hash": "6d818f9aee40602c6b6924e336828f15da0cbd69c2465e01a44337efbefaa67c",
+  "signed_mandate": {
+    "mandate": {
+      "agent": "agent.sampan-trust-01.testnet",
+      "asset": "token.sampan-trust-01.testnet",
+      "buyer": "near:ed25519:8cjjaA132kW8sVijtzTjLZjeJg8os1rUFPa1DYjYH5Mc",
+      "expiry_ns": "1794079725008000000",
+      "gate": "gate-m3.sampan-trust-01.testnet",
+      "items": [
+        "report-001",
+        "report-002"
+      ],
+      "max_amount": "3000000",
+      "network": "testnet",
+      "nonce": "cc9f60cc93add57a3655c52c24d40085c8b3ceb46d1b2cf040b8e84e5556d245",
+      "payee": "payee2-m3.sampan-trust-01.testnet",
+      "refund_to": "buyer.sampan-trust-01.testnet",
+      "v": "sampan.mandate.v1"
+    },
+    "signature": "559bf2f72124ae817434d9a7025d36c97050f5e24fd296d570ba5b195f9ed3d51f25add1202503feebf293e092d4b23b81af457f0bbe5d406168873e70bd8a08",
+    "standard": "nep413",
+    "v": "sampan.signed-mandate.v1"
+  },
+  "order": {
+    "amount": "1000000",
+    "asset": "token.sampan-trust-01.testnet",
+    "item": "report-001",
+    "mandate_hash": "924e40ddbe1d78a9f1ebb9a08b3eab0777f73620f7914e977df63b816a66f91b",
+    "order_id": "138b4929a6bdb9e2f12e0775ca667fd3cac31a21a94591f5b1a077364954aa8f",
+    "payee": "payee2-m3.sampan-trust-01.testnet",
+    "v": "sampan.order.v1"
+  },
+  "tx": {
+    "deposit": "Htf7FbbD8tMSKyms1wcK5bWragWbydnGjMkDsaAF5jz8",
+    "decision": "BULh12CPJi5kZYjmZNxKKS2WR9CXhpttwtxA7vuthoYf",
+    "payout": "BULh12CPJi5kZYjmZNxKKS2WR9CXhpttwtxA7vuthoYf"
+  },
+  "untrusted": {
+    "agent_note": "Bought report-001 as the buyer asked."
+  }
+}

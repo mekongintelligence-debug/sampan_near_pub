@@ -1,0 +1,10 @@
+{
+  "name": "valid",
+  "kind": "order",
+  "description": "Valid order",
+  "input_b64": "eyJhbW91bnQiOiIyNTAwMDAwIiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsIml0ZW0iOiJyZXBvcnQtMDAxIiwibWFuZGF0ZV9oYXNoIjoiY2IwMDUxMTk3MzMxOWQ4NDRlN2IyZTUzYzU0NjI1YTk1NTNiYTA0NGU1MmZiZjBhMjg4ZTI1Yjc2ZjA4ZmU0ZiIsIm9yZGVyX2lkIjoiMGJhZmUyMjE1NmQyNjk4YzE0M2I4NjA0MDQ0NmQzNjZlYWQ4NjNiYTYwMGQ1YzkyNGYzZDE1Yzc4NmVmNDA1NyIsInBheWVlIjoibWVyY2hhbnQudmVjdG9ycy1vbmx5LnRlc3RuZXQiLCJ2Ijoic2FtcGFuLm9yZGVyLnYxIn0=",
+  "expect": {
+    "ok": true,
+    "hash": "ec467d5e4e8fad19a7bb4081d93769a537157bd2cda7b880a9c04a2a4d8c57ca"
+  }
+}

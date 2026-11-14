@@ -1,0 +1,10 @@
+{
+  "name": "refuse",
+  "kind": "receipt_core",
+  "description": "Payee and item rules fail, refused",
+  "input_b64": "eyJibG9ja19oZWlnaHQiOiIyMDAwMDAwMDAiLCJkZWNpc2lvbiI6InJlZnVzZSIsImdhdGUiOiJnYXRlLnZlY3RvcnMtb25seS50ZXN0bmV0IiwibWFuZGF0ZV9oYXNoIjoiY2IwMDUxMTk3MzMxOWQ4NDRlN2IyZTUzYzU0NjI1YTk1NTNiYTA0NGU1MmZiZjBhMjg4ZTI1Yjc2ZjA4ZmU0ZiIsIm5ldHdvcmsiOiJ0ZXN0bmV0Iiwib2JzZXJ2ZWQiOnsiYW1vdW50IjoiMjUwMDAwMCIsImFzc2V0IjoidG9rZW4udmVjdG9ycy1vbmx5LnRlc3RuZXQifSwib3JkZXJfaGFzaCI6ImVjNDY3ZDVlNGU4ZmFkMTlhN2JiNDA4MWQ5Mzc2OWE1MzcxNTdiZDJjZGE3Yjg4MGE5YzA0YTJhNGQ4YzU3Y2EiLCJydWxlcyI6W3siaWQiOiJSMSIsInBhc3MiOnRydWV9LHsiaWQiOiJSMiIsInBhc3MiOnRydWV9LHsiaWQiOiJSMyIsInBhc3MiOnRydWV9LHsiaWQiOiJSNCIsInBhc3MiOnRydWV9LHsiaWQiOiJSNSIsInBhc3MiOnRydWV9LHsiaWQiOiJSNiIsInBhc3MiOnRydWV9LHsiaWQiOiJSNyIsInBhc3MiOnRydWV9LHsiaWQiOiJSOCIsInBhc3MiOmZhbHNlfSx7ImlkIjoiUjkiLCJwYXNzIjpmYWxzZX1dLCJ2Ijoic2FtcGFuLnJlY2VpcHQudjEifQ==",
+  "expect": {
+    "ok": true,
+    "hash": "9e2eda68feb867919650126cda8389f898651dd9c18e408a127a8d85a51b47af"
+  }
+}

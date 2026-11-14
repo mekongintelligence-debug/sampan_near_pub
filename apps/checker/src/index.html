@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="__CSP__">
+<meta name="referrer" content="no-referrer">
+<title>Receipt checker</title>
+<style>__STYLE__</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Payment receipt checker</p>
+    <h1>Was this payment the one the buyer approved?</h1>
+    <p class="lede">Paste or open a receipt. This page checks it against the NEAR blockchain directly. It needs no wallet, no account and no server of ours: the only place it connects to is the NEAR RPC shown below.</p>
+  </header>
+
+  <section class="input" aria-label="Receipt">
+    <label for="receipt">Receipt (JSON)</label>
+    <textarea id="receipt" spellcheck="false" rows="8" placeholder='{"v":"sampan.receipt-envelope.v1", ...}'></textarea>
+    <div class="row">
+      <label class="file" for="file">Open a receipt file</label>
+      <input id="file" type="file" accept=".json,application/json">
+    </div>
+    <details>
+      <summary>Network settings</summary>
+      <label for="rpc">NEAR RPC</label>
+      <input id="rpc" type="url" spellcheck="false">
+      <label for="rpc2">Second RPC to cross-check (optional)</label>
+      <input id="rpc2" type="url" spellcheck="false" placeholder="https://test.rpc.fastnear.com">
+      <p class="hint" id="allowed"></p>
+    </details>
+    <button id="check" type="button">Check receipt</button>
+  </section>
+
+  <section id="result" aria-live="polite" hidden>
+    <div id="verdict" class="verdict"></div>
+    <dl id="facts"></dl>
+    <h2>What was checked</h2>
+    <ol id="checks"></ol>
+    <div id="note" hidden>
+      <h2>Note attached to the receipt (not verified)</h2>
+      <p class="hint">Anyone who had this file could have written or changed this note (M6-07). It is shown as plain text and is not part of the checks.</p>
+      <pre id="note-text"></pre>
+    </div>
+  </section>
+</main>
+<script>__SCRIPT__</script>
+</body>
+</html>

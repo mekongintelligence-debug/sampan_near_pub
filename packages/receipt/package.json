@@ -1,0 +1,13 @@
+{
+  "name": "@sampan/receipt",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@sampan/mandate": "workspace:*",
+    "@scure/base": "2.4.0"
+  }
+}

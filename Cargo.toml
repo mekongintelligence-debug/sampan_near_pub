@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = ["contracts/gate", "crates/formats"]
+exclude = ["crates/formats/fuzz", "spikes"]
+
+[workspace.package]
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+# Panics, unchecked arithmetic, indexing and the macros/calls listed in clippy.toml are
+# forbidden in contract code only (crate-level attribute in contracts/gate/src/lib.rs).
+# Off by default here so tests can use assertions.
+disallowed_macros = "allow"
+
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+# Keep integer overflow checks in release builds (docs/SECURITY.md 3.1).
+overflow-checks = true

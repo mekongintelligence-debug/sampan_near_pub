@@ -1,0 +1,30 @@
+[package]
+name = "sampan-formats-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "=0.4.13"
+sampan-formats = { path = ".." }
+near-sdk = { version = "=5.30.1", default-features = false, features = ["unstable", "unit-testing"] }
+
+# Not part of the main workspace: built only by `make fuzz` on the pinned nightly.
+[workspace]
+
+[[bin]]
+name = "parse_documents"
+path = "fuzz_targets/parse_documents.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "canonical_roundtrip"
+path = "fuzz_targets/canonical_roundtrip.rs"
+test = false
+doc = false
+bench = false

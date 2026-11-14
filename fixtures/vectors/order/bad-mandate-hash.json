@@ -1,0 +1,10 @@
+{
+  "name": "bad-mandate-hash",
+  "kind": "order",
+  "description": "Mandate hash not 32 bytes",
+  "input_b64": "eyJhbW91bnQiOiIyNTAwMDAwIiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsIml0ZW0iOiJyZXBvcnQtMDAxIiwibWFuZGF0ZV9oYXNoIjoiMDA1MTE5NzMzMTlkODQ0ZTdiMmU1M2M1NDYyNWE5NTUzYmEwNDRlNTJmYmYwYTI4OGUyNWI3NmYwOGZlNGYiLCJvcmRlcl9pZCI6IjBiYWZlMjIxNTZkMjY5OGMxNDNiODYwNDA0NDZkMzY2ZWFkODYzYmE2MDBkNWM5MjRmM2QxNWM3ODZlZjQwNTciLCJwYXllZSI6Im1lcmNoYW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwidiI6InNhbXBhbi5vcmRlci52MSJ9",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "audit-m2-01-order-two-key-sign-bit",
+  "kind": "mandate",
+  "description": "Buyer key ec ff..ff ff (M2-01)",
+  "input_b64": "eyJhZ2VudCI6ImFnZW50LnNhbXBhbi10cnVzdC0wMS50ZXN0bmV0IiwiYXNzZXQiOiJ0b2tlbi5zYW1wYW4tdHJ1c3QtMDEudGVzdG5ldCIsImJ1eWVyIjoibmVhcjplZDI1NTE5Okd4OWRETnh6cEFMQ293VnVaYjdwQmNlQkxKdWdMQThzUGE2VEpEWHJwZmdpIiwiZXhwaXJ5X25zIjoiMTc5NDg3MzYwMDAwMDAwMDAwMCIsImdhdGUiOiJnYXRlLnNhbXBhbi10cnVzdC0wMS50ZXN0bmV0IiwiaXRlbXMiOlsicmVwb3J0LTAwMSJdLCJtYXhfYW1vdW50IjoiNTAwMDAwMCIsIm5ldHdvcmsiOiJ0ZXN0bmV0Iiwibm9uY2UiOiJkMTE5ODQ2YjQzYzliYzdhZGY4MTI0M2I1ZmU1MDk2N2MwZjBmYWQ0NTZjZjUwMDRhYjEyMGY2YTllYzFhZjlkIiwicGF5ZWUiOiJtZXJjaGFudC5zYW1wYW4tdHJ1c3QtMDEudGVzdG5ldCIsInJlZnVuZF90byI6ImJ1eWVyLnNhbXBhbi10cnVzdC0wMS50ZXN0bmV0IiwidiI6InNhbXBhbi5tYW5kYXRlLnYxIn0=",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

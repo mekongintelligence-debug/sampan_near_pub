@@ -1,0 +1,10 @@
+{
+  "name": "deep-nesting-40",
+  "kind": "mandate",
+  "description": "Nesting depth 40",
+  "input_b64": "W1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW11dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV0=",
+  "expect": {
+    "ok": false,
+    "error": "invalid_json"
+  }
+}

@@ -1,0 +1,61 @@
+# Build output
+target/
+node_modules/
+dist/
+coverage/
+.pnpm-store/
+*.wasm
+!fixtures/**/*.wasm
+
+# Secrets: never commit keys, credentials or environment files
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+keys/
+near-credentials/
+.near-credentials/
+neardev/
+**/credentials/**
+*.secret
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# NEAR and other credential files (docs/audits/M0.md, M0-01 and M0-03)
+*.testnet.json
+*.near.json
+*.mainnet.json
+.envrc
+.cargo/credentials
+.cargo/credentials.toml
+id_ed25519*
+id_rsa*
+id_ecdsa*
+*.keystore
+*.key.json
+*.privkey
+seed*.txt
+
+# cargo-mutants output
+mutants.out/
+mutants.out.old/
+
+# cargo-fuzz output
+crates/formats/fuzz/target/
+crates/formats/fuzz/corpus/
+crates/formats/fuzz/artifacts/
+crates/formats/fuzz/coverage/
+
+# throwaway spike build output
+spikes/*/target/
+
+# M4: agent function-call key and demo state (never commit)
+.secrets/
+site/
+graphify-out/

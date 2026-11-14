@@ -1,0 +1,10 @@
+{
+  "name": "audit-m2-01-identity-key-sign-bit",
+  "kind": "mandate",
+  "description": "Buyer key 01 00..00 80 (M2-01)",
+  "input_b64": "eyJhZ2VudCI6ImFnZW50LnNhbXBhbi10cnVzdC0wMS50ZXN0bmV0IiwiYXNzZXQiOiJ0b2tlbi5zYW1wYW4tdHJ1c3QtMDEudGVzdG5ldCIsImJ1eWVyIjoibmVhcjplZDI1NTE5OjR1UWVWajV0cVZpUWg3eVdXR1N0dmtFRzFabWh4NnVhc0p0V0NKemlvaFoiLCJleHBpcnlfbnMiOiIxNzk0ODczNjAwMDAwMDAwMDAwIiwiZ2F0ZSI6ImdhdGUuc2FtcGFuLXRydXN0LTAxLnRlc3RuZXQiLCJpdGVtcyI6WyJyZXBvcnQtMDAxIl0sIm1heF9hbW91bnQiOiI1MDAwMDAwIiwibmV0d29yayI6InRlc3RuZXQiLCJub25jZSI6ImQxMTk4NDZiNDNjOWJjN2FkZjgxMjQzYjVmZTUwOTY3YzBmMGZhZDQ1NmNmNTAwNGFiMTIwZjZhOWVjMWFmOWQiLCJwYXllZSI6ImF0dGFja2VyLnRlc3RuZXQiLCJyZWZ1bmRfdG8iOiJidXllci5zYW1wYW4tdHJ1c3QtMDEudGVzdG5ldCIsInYiOiJzYW1wYW4ubWFuZGF0ZS52MSJ9",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

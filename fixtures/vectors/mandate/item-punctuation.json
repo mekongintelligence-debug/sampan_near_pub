@@ -1,0 +1,10 @@
+{
+  "name": "item-punctuation",
+  "kind": "mandate",
+  "description": "Item ID with dot, underscore and dash",
+  "input_b64": "eyJhZ2VudCI6ImFnZW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsImJ1eWVyIjoibmVhcjplZDI1NTE5OkZWWFdpcWpnS0w0YUYyOGNkSDhWemd0QVhoWXh5RlNydm5la0ZuakVTV0NYIiwiZXhwaXJ5X25zIjoiMTc5NDg3MzYwMDAwMDAwMDAwMCIsImdhdGUiOiJnYXRlLnZlY3RvcnMtb25seS50ZXN0bmV0IiwiaXRlbXMiOlsiYS5iX2MtZCJdLCJtYXhfYW1vdW50IjoiNTAwMDAwMCIsIm5ldHdvcmsiOiJ0ZXN0bmV0Iiwibm9uY2UiOiI5ZTNmMTU2MzI0ZDQyZjBlYTRiNmY0ZmNlODFkNTZmYmQ2NGEyMTQzYTNmZGQ2MGExMzBkOWM5MGU1YjRkNjg4IiwicGF5ZWUiOiJtZXJjaGFudC52ZWN0b3JzLW9ubHkudGVzdG5ldCIsInJlZnVuZF90byI6ImJ1eWVyLnZlY3RvcnMtb25seS50ZXN0bmV0IiwidiI6InNhbXBhbi5tYW5kYXRlLnYxIn0=",
+  "expect": {
+    "ok": true,
+    "hash": "380910757929f4f2bb7e413a7b653bda6ca9c2f583f1115bdf26cbe0bb028024"
+  }
+}

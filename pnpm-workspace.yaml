@@ -1,0 +1,6 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+
+# Supply-chain policy (docs/SECURITY.md 3.6): no dependency may run install or build scripts.
+onlyBuiltDependencies: []

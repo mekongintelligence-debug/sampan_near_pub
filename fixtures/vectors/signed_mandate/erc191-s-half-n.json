@@ -1,0 +1,10 @@
+{
+  "name": "erc191-s-half-n",
+  "kind": "signed_mandate",
+  "description": "s = n/2 exactly passes the low-s rule (then the signer does not match)",
+  "input_b64": "eyJtYW5kYXRlIjp7ImFnZW50IjoiYWdlbnQudmVjdG9ycy1vbmx5LnRlc3RuZXQiLCJhc3NldCI6InRva2VuLnZlY3RvcnMtb25seS50ZXN0bmV0IiwiYnV5ZXIiOiJldm06MHgxOTZmYjllZDMyMjI5ODNlNTY3NTc0ZDkyZTVjYjc0OGIzODZiN2EzIiwiZXhwaXJ5X25zIjoiMTc5NDg3MzYwMDAwMDAwMDAwMCIsImdhdGUiOiJnYXRlLnZlY3RvcnMtb25seS50ZXN0bmV0IiwiaXRlbXMiOlsicmVwb3J0LTAwMSIsInJlcG9ydC0wMDIiXSwibWF4X2Ftb3VudCI6IjUwMDAwMDAiLCJuZXR3b3JrIjoidGVzdG5ldCIsIm5vbmNlIjoiYzMzMjMyMmEyOTBlMjI1OGJjMjk2MWM4YTM0YTRhNTNmYTQ4ZmViYTI3OGFjMmYwMTNmZTYzYWM3NjZkYTcyOSIsInBheWVlIjoibWVyY2hhbnQudmVjdG9ycy1vbmx5LnRlc3RuZXQiLCJyZWZ1bmRfdG8iOiJidXllci52ZWN0b3JzLW9ubHkudGVzdG5ldCIsInYiOiJzYW1wYW4ubWFuZGF0ZS52MSJ9LCJzaWduYXR1cmUiOiIyMTFlMzg2MDVjMGE1ZjdiNjNmYTI3NzMzZTk0MWU1MDQ1ODZjOWEzM2MwZDAzYTNiYjgzMmI5YzBlMTZkODQxN2ZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmY1ZDU3NmU3MzU3YTQ1MDFkZGZlOTJmNDY2ODFiMjBhMDFiIiwic3RhbmRhcmQiOiJlcmMxOTEiLCJ2Ijoic2FtcGFuLnNpZ25lZC1tYW5kYXRlLnYxIn0=",
+  "expect": {
+    "ok": false,
+    "error": "wrong_signer"
+  }
+}

@@ -1,0 +1,11 @@
+# cargo-audit policy. Every ignore needs a reason and must be re-checked at each audit.
+# Both advisories below reach only the host-side unit-test harness that
+# near-sdk's "unit-testing" feature pulls in (near-vm-runner, near-parameters).
+# Neither crate is compiled into the deployed contract; the test
+# "ignored advisories never reach the contract build" in
+# scripts/tests/security-baseline.test.mjs enforces that.
+[advisories]
+ignore = [
+  "RUSTSEC-2026-0387", # crypto-bigint 0.5.5 timing issues: test harness only (via near-vm-runner/p256)
+  "RUSTSEC-2024-0449", # unsafe-libyaml unmaintained: test harness only (via near-parameters/serde_yaml)
+]

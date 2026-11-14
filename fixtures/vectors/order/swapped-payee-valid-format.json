@@ -1,0 +1,10 @@
+{
+  "name": "swapped-payee-valid-format",
+  "kind": "order",
+  "description": "Swapped payee is well-formed (refused later by R8, not the format)",
+  "input_b64": "eyJhbW91bnQiOiIyNTAwMDAwIiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsIml0ZW0iOiJyZXBvcnQtMDAxIiwibWFuZGF0ZV9oYXNoIjoiY2IwMDUxMTk3MzMxOWQ4NDRlN2IyZTUzYzU0NjI1YTk1NTNiYTA0NGU1MmZiZjBhMjg4ZTI1Yjc2ZjA4ZmU0ZiIsIm9yZGVyX2lkIjoiMGJhZmUyMjE1NmQyNjk4YzE0M2I4NjA0MDQ0NmQzNjZlYWQ4NjNiYTYwMGQ1YzkyNGYzZDE1Yzc4NmVmNDA1NyIsInBheWVlIjoiYXR0YWNrZXIudGVzdG5ldCIsInYiOiJzYW1wYW4ub3JkZXIudjEifQ==",
+  "expect": {
+    "ok": true,
+    "hash": "8d06f0fd84c5d0e6d072a923559ebe4210bfecd984b3b87fe9fe1e968360d3fd"
+  }
+}

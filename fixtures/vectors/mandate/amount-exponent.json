@@ -1,0 +1,10 @@
+{
+  "name": "amount-exponent",
+  "kind": "mandate",
+  "description": "Exponent notation in a string",
+  "input_b64": "eyJhZ2VudCI6ImFnZW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsImJ1eWVyIjoibmVhcjplZDI1NTE5OkZWWFdpcWpnS0w0YUYyOGNkSDhWemd0QVhoWXh5RlNydm5la0ZuakVTV0NYIiwiZXhwaXJ5X25zIjoiMTc5NDg3MzYwMDAwMDAwMDAwMCIsImdhdGUiOiJnYXRlLnZlY3RvcnMtb25seS50ZXN0bmV0IiwiaXRlbXMiOlsicmVwb3J0LTAwMSIsInJlcG9ydC0wMDIiXSwibWF4X2Ftb3VudCI6IjFlNiIsIm5ldHdvcmsiOiJ0ZXN0bmV0Iiwibm9uY2UiOiI5ZTNmMTU2MzI0ZDQyZjBlYTRiNmY0ZmNlODFkNTZmYmQ2NGEyMTQzYTNmZGQ2MGExMzBkOWM5MGU1YjRkNjg4IiwicGF5ZWUiOiJtZXJjaGFudC52ZWN0b3JzLW9ubHkudGVzdG5ldCIsInJlZnVuZF90byI6ImJ1eWVyLnZlY3RvcnMtb25seS50ZXN0bmV0IiwidiI6InNhbXBhbi5tYW5kYXRlLnYxIn0=",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "empty",
+  "kind": "mandate",
+  "description": "Empty input",
+  "input_b64": "",
+  "expect": {
+    "ok": false,
+    "error": "invalid_json"
+  }
+}

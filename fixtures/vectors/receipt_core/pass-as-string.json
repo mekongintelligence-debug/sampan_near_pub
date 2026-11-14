@@ -1,0 +1,10 @@
+{
+  "name": "pass-as-string",
+  "kind": "receipt_core",
+  "description": "pass written as a string",
+  "input_b64": "eyJibG9ja19oZWlnaHQiOiIyMDAwMDAwMDAiLCJkZWNpc2lvbiI6InJlbGVhc2UiLCJnYXRlIjoiZ2F0ZS52ZWN0b3JzLW9ubHkudGVzdG5ldCIsIm1hbmRhdGVfaGFzaCI6ImNiMDA1MTE5NzMzMTlkODQ0ZTdiMmU1M2M1NDYyNWE5NTUzYmEwNDRlNTJmYmYwYTI4OGUyNWI3NmYwOGZlNGYiLCJuZXR3b3JrIjoidGVzdG5ldCIsIm9ic2VydmVkIjp7ImFtb3VudCI6IjI1MDAwMDAiLCJhc3NldCI6InRva2VuLnZlY3RvcnMtb25seS50ZXN0bmV0In0sIm9yZGVyX2hhc2giOiJlYzQ2N2Q1ZTRlOGZhZDE5YTdiYjQwODFkOTM3NjlhNTM3MTU3YmQyY2RhN2I4ODBhOWMwNGEyYTRkOGM1N2NhIiwicnVsZXMiOlt7ImlkIjoiUjEiLCJwYXNzIjoidHJ1ZSJ9LHsiaWQiOiJSMiIsInBhc3MiOnRydWV9LHsiaWQiOiJSMyIsInBhc3MiOnRydWV9LHsiaWQiOiJSNCIsInBhc3MiOnRydWV9LHsiaWQiOiJSNSIsInBhc3MiOnRydWV9LHsiaWQiOiJSNiIsInBhc3MiOnRydWV9LHsiaWQiOiJSNyIsInBhc3MiOnRydWV9LHsiaWQiOiJSOCIsInBhc3MiOnRydWV9LHsiaWQiOiJSOSIsInBhc3MiOnRydWV9XSwidiI6InNhbXBhbi5yZWNlaXB0LnYxIn0=",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

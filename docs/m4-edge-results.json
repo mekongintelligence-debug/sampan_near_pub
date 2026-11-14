@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-06T11:04:24.535Z",
+  "agent": "agent.sampan-trust-01.testnet",
+  "results": [
+    {
+      "case": "operator adds a key whose allowance is too small from the start",
+      "asExpected": true,
+      "detail": "added",
+      "tx": "https://testnet.nearblocks.io/txns/AbU5fTqvZqPoFfi1o3tkK8uQLesgYsEreKQi4yCcyAzm"
+    },
+    {
+      "case": "allowance exhausted (too small for one purchase): refused by the protocol before execution",
+      "asExpected": true,
+      "detail": "Not enough allowance for access key ed25519:[key] on account agent.sampan-trust-01.testnet (allowance: 1000000000000000000, cost: 150921302948314000000000)",
+      "tx": ""
+    },
+    {
+      "case": "operator removes the tiny-allowance key",
+      "asExpected": true,
+      "detail": "deleted",
+      "tx": "https://testnet.nearblocks.io/txns/5K5XRJ2YuAn4kTtdsAJ2m4rpmAiUvBS8ccUDerF8Xs6n"
+    },
+    {
+      "case": "before removal: the agent's valid purchase is released",
+      "asExpected": true,
+      "detail": "{\"decision\":\"release\",\"anchored\":true,\"order_id\":\"a360b5b90e30294d4173c36e31536bc3107b8367cb95cffdb87af981dea72fcc\",\"core_hash\":\"82486e9c65dd95dafe91affc916c6c3fd0ac81462ea8cdc58bdd27be88f2dd2f\"}",
+      "tx": "https://testnet.nearblocks.io/txns/8mKKe8EueyHP6RVPmyrPV2pAu26zSdNgmJViJxYh6bND"
+    },
+    {
+      "case": "operator deletes the agent key mid-demo",
+      "asExpected": true,
+      "detail": "deleted",
+      "tx": "https://testnet.nearblocks.io/txns/5sP3PC2zdyUjiSXEmxAhpS23oYBcJNTzgovLuM18S8jq"
+    },
+    {
+      "case": "after removal: the agent cannot act",
+      "asExpected": true,
+      "detail": "Access key ed25519:[key] does not exist at block height 276478772",
+      "tx": ""
+    }
+  ]
+}

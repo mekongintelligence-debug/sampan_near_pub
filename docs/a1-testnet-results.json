@@ -1,0 +1,260 @@
+{
+  "run": {
+    "date": "2026-11-07T09:02:04.609Z",
+    "gate": "gate-m3.sampan-trust-01.testnet",
+    "results": [
+      {
+        "name": "init gate (private: only the gate account may)",
+        "ok": true,
+        "detail": "null",
+        "tx": "https://testnet.nearblocks.io/txns/5djvfygqQhsxkNkvARyR3dJxBGpTMwFfcYaHfnDG3fLf"
+      },
+      {
+        "name": "add agent function-call key (gate.purchase only)",
+        "ok": true,
+        "detail": "null",
+        "tx": "https://testnet.nearblocks.io/txns/4Yi9TxzgpvFzjTHA3w2LiKzBwd57qGuCjQycGEVzLXUa"
+      },
+      {
+        "name": "R1. lifetime over 24 hours: refused (lifetime_too_long), nothing stored",
+        "ok": true,
+        "detail": "{\"registered\":false,\"reason\":\"lifetime_too_long\"}",
+        "tx": "https://testnet.nearblocks.io/txns/2d8EcN6KQCXjXNnE9yrkWW13yTcm3bn5jiN2fqRCGxSE"
+      },
+      {
+        "name": "R2. mandate for mainnet (R2): refused (wrong_network)",
+        "ok": true,
+        "detail": "{\"registered\":false,\"reason\":\"wrong_network\"}",
+        "tx": "https://testnet.nearblocks.io/txns/DQNyd6LBoxaY21JLdawVPdFhCGMnNzGwLzAsapYt1SnB"
+      },
+      {
+        "name": "R3. tampered mandate (R1): refused (bad_signature or invalid)",
+        "ok": true,
+        "detail": "{\"registered\":false,\"reason\":\"mandate_invalid\"}",
+        "tx": "https://testnet.nearblocks.io/txns/7FniVNP1dyQsMmyAcWFRTfHqZWSa5H97AfX1qwmFNVKA"
+      },
+      {
+        "name": "R4. deposit below the reservation: refused (deposit_too_small)",
+        "ok": true,
+        "detail": "{\"registered\":false,\"reason\":\"deposit_too_small\"}",
+        "tx": "https://testnet.nearblocks.io/txns/GTHNGd76ay2i5oQB5dBDmYM4JyM7ZLqXZYuA7TiKndti"
+      },
+      {
+        "name": "R5. refused registrations returned their deposits (relayer paid gas only)",
+        "ok": true,
+        "detail": "1291209026791800000000 yoctoNEAR spent on 4 refused calls",
+        "tx": ""
+      },
+      {
+        "name": "R6. not the guardian: stop() is refused (not_guardian)",
+        "ok": true,
+        "detail": "{\"decision\":\"refuse\",\"anchored\":false,\"reason\":\"not_guardian\"}",
+        "tx": "https://testnet.nearblocks.io/txns/2HbMAhCQp46rAqyiha7iPHR9hPRjgKYzBPALyX37KTNV"
+      },
+      {
+        "name": "A1. relayer registers mandate A with the deposit (surplus returned)",
+        "ok": true,
+        "detail": "{\"registered\":true,\"mandate_hash\":\"60af00463455753d58b3f858e099748ff0b831877635799b3d87bd3acef6a602\"}",
+        "tx": "https://testnet.nearblocks.io/txns/DpbWZK7qxypiw2nvKYkEF1oySmFAjNcrYiaPoLvGLcV7"
+      },
+      {
+        "name": "A2. buyer pays 5 tokens naming A by hash (the 1Click form)",
+        "ok": true,
+        "detail": "\"5000000\"",
+        "tx": "https://testnet.nearblocks.io/txns/HVvwQE3XkoPjExs5LccMbNhWpgZkwjgHfmVwiZZhJGqg"
+      },
+      {
+        "name": "A3. a payment naming an unknown mandate is handed back in full (used 0)",
+        "ok": true,
+        "detail": "\"0\"",
+        "tx": "https://testnet.nearblocks.io/txns/6y33BJh3MUKEk6phJ4wYecqZXEfzD4c8BJycgBPyj8yZ"
+      },
+      {
+        "name": "A4. A1C-07: release accepted at the minimum gas",
+        "ok": true,
+        "detail": "87 Tgas https://testnet.nearblocks.io/txns/FUkTfGqA2pqYKkyQ7mm3vvhihKeVkSQoyJuKJm7Qj1o7",
+        "tx": ""
+      },
+      {
+        "name": "A5. A1C-07: the callback ran at minimum gas: payout Done, shop paid 2, nothing pending",
+        "ok": true,
+        "detail": "{\"mandate_hash\":\"60af00463455753d58b3f858e099748ff0b831877635799b3d87bd3acef6a602\",\"core_hash\":\"85a4afe1648fa3e64c6b4593d4bef82e89cbc28ffe9ba652ad1f9551be604750\",\"decision\":\"release\",\"amount\":\"2000000\",\"payout\":\"Done\",\"block_height\":\"276609296\"}",
+        "tx": ""
+      },
+      {
+        "name": "A6. receipt event re-parses with the TS checker code and equals the anchor",
+        "ok": true,
+        "detail": "5261db6711a75444d10afa94573cf50bced0f76cb8ebd936efe25b52238caa34",
+        "tx": ""
+      },
+      {
+        "name": "F1. buyer registers mandate F itself (payee: the gate)",
+        "ok": true,
+        "detail": "{\"registered\":true,\"mandate_hash\":\"0f454e174eae3e949a69f3be25e458ae8dd8f801b89cbac7d671e2f8b3514713\"}",
+        "tx": "https://testnet.nearblocks.io/txns/7uaNXMRMHYmNfucnXFAPNCMEqk5w9wny5urfpgBsEjAZ"
+      },
+      {
+        "name": "F2. buyer pays 0.5 tokens with the signed mandate in the message",
+        "ok": true,
+        "detail": "\"500000\"",
+        "tx": "https://testnet.nearblocks.io/txns/4VSZAtE3qCQwjMemF6FL8DAQaRYv2Q5vBerFe7x7Mk3b"
+      },
+      {
+        "name": "F3. A1C-07: release with a failing payout accepted at the minimum gas",
+        "ok": true,
+        "detail": "87 Tgas https://testnet.nearblocks.io/txns/4CRcTMGUDZpewuFTCFoCj84G3xHxR3RXUwW5LRHWkcpV",
+        "tx": ""
+      },
+      {
+        "name": "F4. A1C-07: callback at minimum gas marked the payout Failed and restored the budget",
+        "ok": true,
+        "detail": "{\"mandate_hash\":\"0f454e174eae3e949a69f3be25e458ae8dd8f801b89cbac7d671e2f8b3514713\",\"core_hash\":\"535fc6f8eb59a2cba08d14deefd29e8626107e152b51df3aece138cb6a404b19\",\"decision\":\"release\",\"amount\":\"200000\",\"payout\":\"Failed\",\"block_height\":\"276609469\"} {\"agent\":\"agent.sampan-trust-01.testnet\",\"payee\":\"gate-m3.sampan-trust-01.testnet\",\"refund_to\":\"buyer.sampan-trust-01.testnet\",\"max_amount\":\"1000000\",\"expiry_ns\":\"1794042023650000000\",\"funded\":\"500000\",\"spent\":\"0\",\"escrow\":\"500000\",\"refunded\":\"0\",\"refund_due\":\"0\",\"orders\":1}",
+        "tx": ""
+      },
+      {
+        "name": "C1. relayer registers the agentless mandate C",
+        "ok": true,
+        "detail": "{\"registered\":true,\"mandate_hash\":\"e30b6bc14fd70cc8e81c4b04dd8df9708c894f903daf1e1aa16408479fabbcba\"}",
+        "tx": "https://testnet.nearblocks.io/txns/ERSmXoobtB4zmV6xuDQUQjPCMCYNRdtevZ8EfbNDPWLe"
+      },
+      {
+        "name": "C2. the payment message fits 1Click's 1,024-character limit (A1P-01)",
+        "ok": true,
+        "detail": "428 characters",
+        "tx": ""
+      },
+      {
+        "name": "C3. an order below the exact price is not decided; the payment becomes refund due",
+        "ok": true,
+        "detail": "\"500000\"",
+        "tx": "https://testnet.nearblocks.io/txns/BmRa2hXkyq8ttz86qvqVPKy65MJiQgndahysaZ12cjsS"
+      },
+      {
+        "name": "C4. over-delivery of 1.2 for the exact price 1: released, 0.2 more refund due",
+        "ok": true,
+        "detail": "\"1200000\"",
+        "tx": "https://testnet.nearblocks.io/txns/2iybbbkP323XnSU5qdT2x6CBR6tqgfwCLimARnFpLuWC"
+      },
+      {
+        "name": "C5. shop received exactly 1 token",
+        "ok": true,
+        "detail": "",
+        "tx": ""
+      },
+      {
+        "name": "C6. a second exact-price order in a later payment is not paid (already_paid)",
+        "ok": true,
+        "detail": "\"1000000\"",
+        "tx": "https://testnet.nearblocks.io/txns/4gBcPtpoT5g4eHcNFwub4z8QsyZjypwxHaGiyKaFQ7mC"
+      },
+      {
+        "name": "C7. before expiry anyone may refund the refund due to refund_to",
+        "ok": true,
+        "detail": "{\"refund\":\"pending\",\"amount\":\"1700000\"}",
+        "tx": "https://testnet.nearblocks.io/txns/94qKzXhTdCJMLyM5KEu6eS42D2iEuFtD5vhQZXA36KmF"
+      },
+      {
+        "name": "C8. buyer got 1.7 tokens back, never 1Click's account (A1P-02)",
+        "ok": true,
+        "detail": "",
+        "tx": ""
+      },
+      {
+        "name": "F5. A1C-07: refund accepted at the minimum gas",
+        "ok": true,
+        "detail": "76 Tgas https://testnet.nearblocks.io/txns/548T3GoSwnUfqjzEC3BzbmxCC7BCp4nQpg6g3XBcPw7K",
+        "tx": ""
+      },
+      {
+        "name": "F6. buyer got the 0.5 tokens back",
+        "ok": true,
+        "detail": "",
+        "tx": ""
+      },
+      {
+        "name": "F7. the callback at minimum gas closed F",
+        "ok": true,
+        "detail": "",
+        "tx": ""
+      },
+      {
+        "name": "F8. the registrant (buyer) got its deposit back, less what F leaves behind",
+        "ok": true,
+        "detail": "95140000000000000000000 of 98500000000000000000000 yoctoNEAR",
+        "tx": ""
+      },
+      {
+        "name": "Z. gate totals",
+        "ok": true,
+        "detail": "{\"total_escrow\":\"3000000\",\"total_refund_due\":\"0\",\"stopped\":false,\"mandates\":2,\"live_mandates\":2,\"registrations\":2}",
+        "tx": ""
+      },
+      {
+        "name": "delete agent function-call key",
+        "ok": true,
+        "detail": "null",
+        "tx": "https://testnet.nearblocks.io/txns/6snjQYgGd7Gm5emynWZ861AdaCR3KiU6jitvX1spwmDu"
+      }
+    ]
+  },
+  "close": {
+    "date": "2026-11-07T10:00:27.392Z",
+    "gate": "gate-m3.sampan-trust-01.testnet",
+    "results": [
+      {
+        "name": "X. A: a stranger refunds after expiry",
+        "ok": true,
+        "detail": "{\"refund\":\"pending\",\"amount\":\"3000000\"}",
+        "tx": "https://testnet.nearblocks.io/txns/6ULXbcsmHsaMv3E7F5eYg8LtH2BrbCVKJNDHzs4Qttoa"
+      },
+      {
+        "name": "X. A: refund_to got escrow plus refund due",
+        "ok": true,
+        "detail": "3000000",
+        "tx": ""
+      },
+      {
+        "name": "X. A: closed",
+        "ok": true,
+        "detail": "",
+        "tx": ""
+      },
+      {
+        "name": "X. A: registrant got part of its deposit back",
+        "ok": true,
+        "detail": "93110000000000000000000 yoctoNEAR",
+        "tx": ""
+      },
+      {
+        "name": "X. C: a stranger refunds after expiry",
+        "ok": true,
+        "detail": "{\"refund\":\"closed\",\"amount\":\"0\"}",
+        "tx": "https://testnet.nearblocks.io/txns/8dDPBwXRTpEqevATsazVkUPJvMppeh9FGvMhzyMpL8z6"
+      },
+      {
+        "name": "X. C: refund_to got escrow plus refund due",
+        "ok": true,
+        "detail": "0",
+        "tx": ""
+      },
+      {
+        "name": "X. C: closed",
+        "ok": true,
+        "detail": "",
+        "tx": ""
+      },
+      {
+        "name": "X. C: registrant got part of its deposit back",
+        "ok": true,
+        "detail": "93150000000000000000000 yoctoNEAR",
+        "tx": ""
+      },
+      {
+        "name": "X. gate totals",
+        "ok": true,
+        "detail": "{\"total_escrow\":\"0\",\"total_refund_due\":\"0\",\"stopped\":false,\"mandates\":0,\"live_mandates\":0,\"registrations\":2}",
+        "tx": ""
+      }
+    ]
+  }
+}

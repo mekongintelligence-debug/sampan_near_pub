@@ -1,0 +1,10 @@
+{
+  "name": "items-17",
+  "kind": "mandate",
+  "description": "Seventeen items",
+  "input_b64": "eyJhZ2VudCI6ImFnZW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsImJ1eWVyIjoibmVhcjplZDI1NTE5OkZWWFdpcWpnS0w0YUYyOGNkSDhWemd0QVhoWXh5RlNydm5la0ZuakVTV0NYIiwiZXhwaXJ5X25zIjoiMTc5NDg3MzYwMDAwMDAwMDAwMCIsImdhdGUiOiJnYXRlLnZlY3RvcnMtb25seS50ZXN0bmV0IiwiaXRlbXMiOlsiaXRlbS0wMCIsIml0ZW0tMDEiLCJpdGVtLTAyIiwiaXRlbS0wMyIsIml0ZW0tMDQiLCJpdGVtLTA1IiwiaXRlbS0wNiIsIml0ZW0tMDciLCJpdGVtLTA4IiwiaXRlbS0wOSIsIml0ZW0tMTAiLCJpdGVtLTExIiwiaXRlbS0xMiIsIml0ZW0tMTMiLCJpdGVtLTE0IiwiaXRlbS0xNSIsIml0ZW0tMTYiXSwibWF4X2Ftb3VudCI6IjUwMDAwMDAiLCJuZXR3b3JrIjoidGVzdG5ldCIsIm5vbmNlIjoiOWUzZjE1NjMyNGQ0MmYwZWE0YjZmNGZjZTgxZDU2ZmJkNjRhMjE0M2EzZmRkNjBhMTMwZDljOTBlNWI0ZDY4OCIsInBheWVlIjoibWVyY2hhbnQudmVjdG9ycy1vbmx5LnRlc3RuZXQiLCJyZWZ1bmRfdG8iOiJidXllci52ZWN0b3JzLW9ubHkudGVzdG5ldCIsInYiOiJzYW1wYW4ubWFuZGF0ZS52MSJ9",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "item-uppercase",
+  "kind": "mandate",
+  "description": "Uppercase in item ID",
+  "input_b64": "eyJhZ2VudCI6ImFnZW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsImJ1eWVyIjoibmVhcjplZDI1NTE5OkZWWFdpcWpnS0w0YUYyOGNkSDhWemd0QVhoWXh5RlNydm5la0ZuakVTV0NYIiwiZXhwaXJ5X25zIjoiMTc5NDg3MzYwMDAwMDAwMDAwMCIsImdhdGUiOiJnYXRlLnZlY3RvcnMtb25seS50ZXN0bmV0IiwiaXRlbXMiOlsiUmVwb3J0Il0sIm1heF9hbW91bnQiOiI1MDAwMDAwIiwibmV0d29yayI6InRlc3RuZXQiLCJub25jZSI6IjllM2YxNTYzMjRkNDJmMGVhNGI2ZjRmY2U4MWQ1NmZiZDY0YTIxNDNhM2ZkZDYwYTEzMGQ5YzkwZTViNGQ2ODgiLCJwYXllZSI6Im1lcmNoYW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwicmVmdW5kX3RvIjoiYnV5ZXIudmVjdG9ycy1vbmx5LnRlc3RuZXQiLCJ2Ijoic2FtcGFuLm1hbmRhdGUudjEifQ==",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

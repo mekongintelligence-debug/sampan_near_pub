@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# Pre-commit: block secrets and banned patterns before they reach git history.
+# Enable with: make hooks   (CI repeats every check, so --no-verify cannot skip them)
+set -e
+scripts/secrets-scan.sh --staged
+node scripts/lint-banned.mjs
+# Dependency checks run when a lockfile changes, using the local advisory database
+# so commits do not depend on the network; CI runs the full online checks.
+staged="$(git diff --cached --name-only)"
+if echo "$staged" | grep -qx 'Cargo.lock'; then
+  cargo audit --no-fetch --deny warnings
+  cargo deny --locked --offline check
+fi
+if echo "$staged" | grep -qx 'pnpm-lock.yaml'; then
+  pnpm audit --audit-level low
+fi

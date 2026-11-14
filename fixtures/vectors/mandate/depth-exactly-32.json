@@ -1,0 +1,10 @@
+{
+  "name": "depth-exactly-32",
+  "kind": "mandate",
+  "description": "Arrays nested exactly 32 deep (allowed depth, then schema)",
+  "input_b64": "W1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tdXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXQ==",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

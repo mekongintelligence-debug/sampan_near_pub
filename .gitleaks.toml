@@ -1,0 +1,25 @@
+# gitleaks configuration: default rules plus NEAR key formats.
+# Always run through scripts/secrets-scan.sh, which adds the hardening flags.
+# No allow-lists: never add one without an audit finding that explains why.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "near-private-key"
+description = "NEAR private key (ed25519 or secp256k1), as printed by near-cli, near-api-js and wallets"
+# ed25519 secret keys are 64 bytes (~87-88 base58 chars); secp256k1 secret keys 32 bytes (~43-44).
+# Public keys are 32 (ed25519) or 64 (secp256k1) bytes; the separate rules below avoid flagging them.
+regex = '''ed25519:[1-9A-HJ-NP-Za-km-z]{80,100}'''
+keywords = ["ed25519:"]
+
+[[rules]]
+id = "near-secp256k1-private-key"
+description = "NEAR secp256k1 private key in a credentials field"
+regex = '''(?i)(?:private_key|secret_key|privatekey|secretkey)["'\s:=]+["']?secp256k1:[1-9A-HJ-NP-Za-km-z]{40,50}'''
+keywords = ["secp256k1:"]
+
+[[rules]]
+id = "near-seed-phrase"
+description = "Seed phrase in a NEAR credentials or environment field"
+regex = '''(?i)(?:seed_phrase|seedphrase|mnemonic|NEAR_SEED)["'\s:=]+["']?([a-z]+ ){11,23}[a-z]+'''
+keywords = ["seed", "mnemonic"]

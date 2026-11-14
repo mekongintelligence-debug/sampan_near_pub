@@ -1,0 +1,14 @@
+{
+  "note": "Gate 1 (docs/gates.md): paths that never become public. Decided by Jan Hanken and confirmed by Vosumtey Seng in the team Telegram group, 8 Nov 2026.",
+  "decided": true,
+  "exclude": [
+    "docs/internal/",
+    "CLAUDE.md",
+    "docs/m3-testnet-run1-results.json",
+    "docs/ARCHITECTURE_AND_PLAN.md",
+    "docs/MILESTONES.md",
+    "docs/gates.md",
+    "docs/competitors.md",
+    "graphify-out/"
+  ]
+}

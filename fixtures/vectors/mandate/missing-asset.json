@@ -1,0 +1,10 @@
+{
+  "name": "missing-asset",
+  "kind": "mandate",
+  "description": "asset missing",
+  "input_b64": "eyJhZ2VudCI6ImFnZW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwiYnV5ZXIiOiJuZWFyOmVkMjU1MTk6RlZYV2lxamdLTDRhRjI4Y2RIOFZ6Z3RBWGhZeHlGU3J2bmVrRm5qRVNXQ1giLCJleHBpcnlfbnMiOiIxNzk0ODczNjAwMDAwMDAwMDAwIiwiZ2F0ZSI6ImdhdGUudmVjdG9ycy1vbmx5LnRlc3RuZXQiLCJpdGVtcyI6WyJyZXBvcnQtMDAxIiwicmVwb3J0LTAwMiJdLCJtYXhfYW1vdW50IjoiNTAwMDAwMCIsIm5ldHdvcmsiOiJ0ZXN0bmV0Iiwibm9uY2UiOiI5ZTNmMTU2MzI0ZDQyZjBlYTRiNmY0ZmNlODFkNTZmYmQ2NGEyMTQzYTNmZGQ2MGExMzBkOWM5MGU1YjRkNjg4IiwicGF5ZWUiOiJtZXJjaGFudC52ZWN0b3JzLW9ubHkudGVzdG5ldCIsInJlZnVuZF90byI6ImJ1eWVyLnZlY3RvcnMtb25seS50ZXN0bmV0IiwidiI6InNhbXBhbi5tYW5kYXRlLnYxIn0=",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

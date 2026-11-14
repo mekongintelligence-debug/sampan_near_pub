@@ -1,0 +1,10 @@
+{
+  "name": "audit-m2-02-mixed-order-key",
+  "kind": "signed_mandate",
+  "description": "Mixed-order buyer key: NEAR's cofactorless check rejects (M2-02)",
+  "input_b64": "eyJtYW5kYXRlIjp7ImFnZW50IjoiYWdlbnQuc2FtcGFuLXRydXN0LTAxLnRlc3RuZXQiLCJhc3NldCI6InRva2VuLnNhbXBhbi10cnVzdC0wMS50ZXN0bmV0IiwiYnV5ZXIiOiJuZWFyOmVkMjU1MTk6MkU0QTc2NWZ0WnNvTjhHZTlqbVUxenhpeDJRODh0SkNyckNqcjd2NTc4bmYiLCJleHBpcnlfbnMiOiIxNzk0ODczNjAwMDAwMDAwMDAwIiwiZ2F0ZSI6ImdhdGUuc2FtcGFuLXRydXN0LTAxLnRlc3RuZXQiLCJpdGVtcyI6WyJyZXBvcnQtMDAxIl0sIm1heF9hbW91bnQiOiI1MDAwMDAwIiwibmV0d29yayI6InRlc3RuZXQiLCJub25jZSI6ImM2MzljMmU5ZjQ2NmUwMjA2YWRiYjQ0ZWIxYTgyYTY2Y2M0NDE2NjU2YjRlYjhkYTJkYjhhNjg0OTc0YWRmNmQiLCJwYXllZSI6Im1lcmNoYW50LnNhbXBhbi10cnVzdC0wMS50ZXN0bmV0IiwicmVmdW5kX3RvIjoiYnV5ZXIuc2FtcGFuLXRydXN0LTAxLnRlc3RuZXQiLCJ2Ijoic2FtcGFuLm1hbmRhdGUudjEifSwic2lnbmF0dXJlIjoiNGRlMzZmZTM0MGZjMjNlNDFlYTlmMTA5NTg5ZDQ2OWJkZmMzYjJjMTc0OTdhMzhjNTIzNjNiODc0MzE3NTA4ZTY4NzY4YTZlMDg3MWIxNzBkMWYzNmRiNjM0NmFmNjVkZWNiZTAyZDFjMTMxNzgyMzVlOTFjYTNlMTExYWM4MDQiLCJzdGFuZGFyZCI6Im5lcDQxMyIsInYiOiJzYW1wYW4uc2lnbmVkLW1hbmRhdGUudjEifQ==",
+  "expect": {
+    "ok": false,
+    "error": "bad_signature"
+  }
+}

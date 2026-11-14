@@ -1,0 +1,17 @@
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+allow-panic-in-tests = true
+allow-indexing-slicing-in-tests = true
+
+# Panicking macros and calls banned in contract code (docs/SECURITY.md 3.1: refusals
+# return normally). Enforced by the crate-level attribute in contracts/gate/src/lib.rs.
+disallowed-macros = [
+  { path = "std::assert", reason = "contract code must not panic; return a refusal" },
+  { path = "std::assert_eq", reason = "contract code must not panic; return a refusal" },
+  { path = "std::assert_ne", reason = "contract code must not panic; return a refusal" },
+  { path = "near_sdk::require", reason = "contract code must not panic; return a refusal" },
+  { path = "std::todo", reason = "no unfinished code in the contract" },
+  { path = "std::unimplemented", reason = "no unfinished code in the contract" },
+]
+# env::panic_str and env::abort are banned in contract source by scripts/lint-banned.mjs
+# (near-sdk's generated code calls them, so a clippy ban cannot apply to wasm builds).

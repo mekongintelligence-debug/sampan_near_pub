@@ -1,0 +1,10 @@
+{
+  "name": "missing-buyer",
+  "kind": "mandate",
+  "description": "buyer missing",
+  "input_b64": "eyJhZ2VudCI6ImFnZW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsImV4cGlyeV9ucyI6IjE3OTQ4NzM2MDAwMDAwMDAwMDAiLCJnYXRlIjoiZ2F0ZS52ZWN0b3JzLW9ubHkudGVzdG5ldCIsIml0ZW1zIjpbInJlcG9ydC0wMDEiLCJyZXBvcnQtMDAyIl0sIm1heF9hbW91bnQiOiI1MDAwMDAwIiwibmV0d29yayI6InRlc3RuZXQiLCJub25jZSI6IjllM2YxNTYzMjRkNDJmMGVhNGI2ZjRmY2U4MWQ1NmZiZDY0YTIxNDNhM2ZkZDYwYTEzMGQ5YzkwZTViNGQ2ODgiLCJwYXllZSI6Im1lcmNoYW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwicmVmdW5kX3RvIjoiYnV5ZXIudmVjdG9ycy1vbmx5LnRlc3RuZXQiLCJ2Ijoic2FtcGFuLm1hbmRhdGUudjEifQ==",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

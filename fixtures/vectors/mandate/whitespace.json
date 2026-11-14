@@ -1,0 +1,10 @@
+{
+  "name": "whitespace",
+  "kind": "mandate",
+  "description": "Pretty-printed JSON is not canonical",
+  "input_b64": "ewogInYiOiAic2FtcGFuLm1hbmRhdGUudjEiLAogIm5ldHdvcmsiOiAidGVzdG5ldCIsCiAiZ2F0ZSI6ICJnYXRlLnZlY3RvcnMtb25seS50ZXN0bmV0IiwKICJidXllciI6ICJuZWFyOmVkMjU1MTk6RlZYV2lxamdLTDRhRjI4Y2RIOFZ6Z3RBWGhZeHlGU3J2bmVrRm5qRVNXQ1giLAogImFnZW50IjogImFnZW50LnZlY3RvcnMtb25seS50ZXN0bmV0IiwKICJhc3NldCI6ICJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsCiAibWF4X2Ftb3VudCI6ICI1MDAwMDAwIiwKICJwYXllZSI6ICJtZXJjaGFudC52ZWN0b3JzLW9ubHkudGVzdG5ldCIsCiAiaXRlbXMiOiBbCiAgInJlcG9ydC0wMDEiLAogICJyZXBvcnQtMDAyIgogXSwKICJleHBpcnlfbnMiOiAiMTc5NDg3MzYwMDAwMDAwMDAwMCIsCiAibm9uY2UiOiAiOWUzZjE1NjMyNGQ0MmYwZWE0YjZmNGZjZTgxZDU2ZmJkNjRhMjE0M2EzZmRkNjBhMTMwZDljOTBlNWI0ZDY4OCIsCiAicmVmdW5kX3RvIjogImJ1eWVyLnZlY3RvcnMtb25seS50ZXN0bmV0Igp9",
+  "expect": {
+    "ok": false,
+    "error": "not_canonical"
+  }
+}

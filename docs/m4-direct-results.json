@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-06T11:03:05.872Z",
+  "agent": "agent.sampan-trust-01.testnet",
+  "rows": [
+    {
+      "action": "control: purchase a valid order (allowed)",
+      "expected": "allowed, released",
+      "asExpected": true,
+      "tx": "https://testnet.nearblocks.io/txns/9qfomcqDZ3Q5FTQDcHABn4NxuAahUiom3xMxLX4uK5fX",
+      "detail": "{\"decision\":\"release\",\"anchored\":true,\"order_id\":\"5436794f4c0cb4ac533adc845478953e5bcb6d9bf520934f7759256661fc122e\",\"core_hash\":\"5f7a67826f693fdc8b051edc8b97219"
+    },
+    {
+      "action": "token.ft_transfer to the agent, 1 yocto",
+      "expected": "refused: DepositWithFunctionCall|Deposit is not allowed with function call|ReceiverMismatch|does not match transaction receiver",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Deposit is not allowed with function call"
+    },
+    {
+      "action": "token.ft_transfer without deposit",
+      "expected": "refused: ReceiverMismatch|does not match transaction receiver",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Access key receiver gate-m3.sampan-trust-01.testnet does not match transaction receiver token.sampan-trust-01.testnet"
+    },
+    {
+      "action": "token.ft_transfer_call to the gate",
+      "expected": "refused: ReceiverMismatch|does not match transaction receiver",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Access key receiver gate-m3.sampan-trust-01.testnet does not match transaction receiver token.sampan-trust-01.testnet"
+    },
+    {
+      "action": "another gate method (refund)",
+      "expected": "refused: MethodNameMismatch|does not allow method",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Access key does not allow method refund"
+    },
+    {
+      "action": "another contract (the payee account)",
+      "expected": "refused: ReceiverMismatch|does not match transaction receiver",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Access key receiver gate-m3.sampan-trust-01.testnet does not match transaction receiver payee2-m3.sampan-trust-01.testnet"
+    },
+    {
+      "action": "purchase with an attached deposit",
+      "expected": "refused: DepositWithFunctionCall|Deposit is not allowed with function call",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Deposit is not allowed with function call"
+    },
+    {
+      "action": "send NEAR",
+      "expected": "refused: RequiresFullAccess|requires full access",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Access key requires full access"
+    },
+    {
+      "action": "add a full-access key",
+      "expected": "refused: RequiresFullAccess|requires full access",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Access key requires full access"
+    },
+    {
+      "action": "delete the agent account",
+      "expected": "refused: RequiresFullAccess|requires full access",
+      "asExpected": true,
+      "tx": "",
+      "detail": "Access key requires full access"
+    }
+  ]
+}

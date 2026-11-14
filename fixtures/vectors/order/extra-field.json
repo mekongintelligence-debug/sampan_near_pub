@@ -1,0 +1,10 @@
+{
+  "name": "extra-field",
+  "kind": "order",
+  "description": "Unknown extra field",
+  "input_b64": "eyJhbW91bnQiOiIyNTAwMDAwIiwiYXNzZXQiOiJ0b2tlbi52ZWN0b3JzLW9ubHkudGVzdG5ldCIsIml0ZW0iOiJyZXBvcnQtMDAxIiwibWFuZGF0ZV9oYXNoIjoiY2IwMDUxMTk3MzMxOWQ4NDRlN2IyZTUzYzU0NjI1YTk1NTNiYTA0NGU1MmZiZjBhMjg4ZTI1Yjc2ZjA4ZmU0ZiIsIm5vdGUiOiJ4Iiwib3JkZXJfaWQiOiIwYmFmZTIyMTU2ZDI2OThjMTQzYjg2MDQwNDQ2ZDM2NmVhZDg2M2JhNjAwZDVjOTI0ZjNkMTVjNzg2ZWY0MDU3IiwicGF5ZWUiOiJtZXJjaGFudC52ZWN0b3JzLW9ubHkudGVzdG5ldCIsInYiOiJzYW1wYW4ub3JkZXIudjEifQ==",
+  "expect": {
+    "ok": false,
+    "error": "schema"
+  }
+}

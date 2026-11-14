@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-07T17:31:34.613Z",
+  "gate": "gate-m3.sampan-trust-01.testnet",
+  "results": [
+    {
+      "name": "1. relayer registers the direct-checkout mandate",
+      "ok": true,
+      "detail": "register tx FFrU64ccGrpkttT7EQV5G86oxg3uw1MYTzV5YwyQY9pM"
+    },
+    {
+      "name": "1. payment with {mandate_hash, order} is used in full",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1. receipt packed from chain data (release, paid in the same transaction)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1. direct checkout: checker verifies (release)",
+      "ok": true,
+      "detail": "file:pass signature:pass order:pass gate:pass locked:unknown anchor:pass tx:pass then:unknown block:pass expiry:pass payout:pass payout-tx:pass deposit-tx:pass"
+    },
+    {
+      "name": "2. buyer registers and funds the agent mandate",
+      "ok": true,
+      "detail": "register tx 782HNuGjiPKhkzbGYoqKB5mBDbGDntgFW1YKJ8RL4tbE, fund tx Htf7FbbD8tMSKyms1wcK5bWragWbydnGjMkDsaAF5jz8"
+    },
+    {
+      "name": "2. agent buys report-001 within the mandate",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "2. agent release: checker verifies (release)",
+      "ok": true,
+      "detail": "file:pass signature:pass order:pass gate:pass locked:unknown anchor:pass tx:pass then:unknown block:pass expiry:pass payout:pass payout-tx:pass deposit-tx:pass"
+    },
+    {
+      "name": "3. agent order paying another payee is refused and anchored (R8)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "3. agent refusal: checker verifies (refuse)",
+      "ok": true,
+      "detail": "file:pass signature:pass order:pass gate:pass locked:unknown anchor:pass tx:pass then:unknown block:pass payout:pass deposit-tx:pass"
+    },
+    {
+      "name": "N1. packer refuses a decision transaction with the wrong mandate",
+      "ok": true,
+      "detail": "mandate_mismatch"
+    },
+    {
+      "name": "N2. checker: a receipt with another order's decision transaction is red",
+      "ok": true,
+      "detail": "tx"
+    },
+    {
+      "name": "N3. a mainnet mandate cannot be registered on the testnet gate (cross-network replay)",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}
